@@ -60,6 +60,7 @@ export class DataServiceService {
    // response is not json it is csv file ie text so we will mention response type text here
    return this.http.get(this.globalDataUrl, {responseType: 'text'}).pipe(
      map(result=>{
+       
        // create array to hold the data 
        let data: GlobalDataSummary[] = [];
 
@@ -130,9 +131,6 @@ export class DataServiceService {
         this.globalDataUrl = `${this.baseURL}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`;
         console.log(this.globalDataUrl);
         return this.getGlobalData();
-      }
-      else{
-        console.log(error)
       }
     })
    )
