@@ -38,7 +38,9 @@ export class DataServiceService {
       let now = new Date()
       this.month = now.getMonth() + 1;
       this.year = now.getFullYear();
-      this.date = now.getDate();
+      this.date = now.getDate() - 2;
+
+      // added -2 here
 
       console.log({
         date : this.date,
